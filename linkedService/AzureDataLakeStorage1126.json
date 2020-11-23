@@ -2,7 +2,7 @@
 	"name": "AzureDataLakeStorage1126",
 	"type": "Microsoft.Synapse/workspaces/linkedservices",
 	"properties": {
-		"description": "Git Mode",
+		"description": "Git Mode01",
 		"annotations": [],
 		"type": "AzureBlobFS",
 		"typeProperties": {

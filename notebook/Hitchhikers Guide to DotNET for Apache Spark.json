@@ -81,7 +81,7 @@
 					"// Simple assignments should just work \n",
 					"var x = 1 + 25;"
 				],
-				"execution_count": null
+				"execution_count": 1
 			},
 			{
 				"cell_type": "code",
@@ -92,7 +92,7 @@
 					"// ... or just type it and execute a cell\n",
 					"256"
 				],
-				"execution_count": null
+				"execution_count": 2
 			},
 			{
 				"cell_type": "code",
@@ -100,7 +100,7 @@
 					"// You can even play with built-in libraries/functions\n",
 					"Enumerable.Range(1, 5)"
 				],
-				"execution_count": null
+				"execution_count": 3
 			},
 			{
 				"cell_type": "code",
@@ -110,7 +110,7 @@
 					"// https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8\n",
 					"1..4"
 				],
-				"execution_count": null
+				"execution_count": 4
 			},
 			{
 				"cell_type": "code",
@@ -128,14 +128,14 @@
 					"        (_, _) => \"tie\"\n",
 					"    };"
 				],
-				"execution_count": null
+				"execution_count": 5
 			},
 			{
 				"cell_type": "code",
 				"source": [
 					"RockPaperScissors(\"rock\", \"paper\")"
 				],
-				"execution_count": null
+				"execution_count": 6
 			},
 			{
 				"cell_type": "code",
@@ -150,7 +150,7 @@
 					"    )\n",
 					");"
 				],
-				"execution_count": null
+				"execution_count": 7
 			},
 			{
 				"cell_type": "markdown",
@@ -193,7 +193,7 @@
 					"var df = spark.CreateDataFrame(data, schema);\n",
 					"df.Show();"
 				],
-				"execution_count": null
+				"execution_count": 8
 			},
 			{
 				"cell_type": "code",
@@ -235,7 +235,7 @@
 					"    writer.Write(t);\n",
 					"}, \"text/html\");"
 				],
-				"execution_count": null
+				"execution_count": 9
 			},
 			{
 				"cell_type": "code",
@@ -249,7 +249,7 @@
 					"display(df);\n",
 					""
 				],
-				"execution_count": null
+				"execution_count": 10
 			},
 			{
 				"cell_type": "code",
@@ -269,7 +269,7 @@
 					"// ... and just typing df (equivalent to \"display(df);\")\r\n",
 					"df"
 				],
-				"execution_count": null
+				"execution_count": 11
 			},
 			{
 				"cell_type": "code",
@@ -279,7 +279,7 @@
 					"    public static readonly string s = \"The person named \";\n",
 					"}"
 				],
-				"execution_count": null
+				"execution_count": 12
 			},
 			{
 				"cell_type": "code",
@@ -294,7 +294,7 @@
 					"    }\n",
 					"}"
 				],
-				"execution_count": null
+				"execution_count": 13
 			},
 			{
 				"cell_type": "code",
@@ -309,7 +309,7 @@
 					"// you should re-execute this cell (i.e., the cell that defines the UDF)\n",
 					"var udf = Udf<string, string>(str => $\"{A.s} - {str} - is {B.GetMood()}!\");"
 				],
-				"execution_count": null
+				"execution_count": 14
 			},
 			{
 				"cell_type": "code",
@@ -320,7 +320,7 @@
 					"    .Select(\n",
 					"        udf((Microsoft.Spark.Sql.Column)df[\"name\"])));"
 				],
-				"execution_count": null
+				"execution_count": 15
 			},
 			{
 				"cell_type": "code",
@@ -351,7 +351,7 @@
 					"lineChart.WithYTitle(\"Y axis\");\r\n",
 					"lineChart"
 				],
-				"execution_count": null
+				"execution_count": 16
 			},
 			{
 				"cell_type": "code",
@@ -392,7 +392,7 @@
 					"var chart = Chart.Plot(new[] {bar});\n",
 					"display(chart);"
 				],
-				"execution_count": null
+				"execution_count": 17
 			},
 			{
 				"cell_type": "code",
@@ -416,7 +416,7 @@
 					"var histogramDf = spark.CreateDataFrame(data, schema);\n",
 					"histogramDf.Show()"
 				],
-				"execution_count": null
+				"execution_count": 18
 			},
 			{
 				"cell_type": "code",
@@ -438,7 +438,7 @@
 					"var sample2 = histogramDf.Sample(0.3, false).Collect().ToArray().Select(x => x.GetAs<double>(\"number\"));\n",
 					"var sample3 = histogramDf.Sample(0.6, true).Collect().ToArray().Select(x => x.GetAs<double>(\"number\"));"
 				],
-				"execution_count": null
+				"execution_count": 19
 			},
 			{
 				"cell_type": "code",
@@ -448,28 +448,28 @@
 					"var hist2 = new Graph.Histogram{x = sample2, opacity = 0.75};\n",
 					"var hist3 = new Graph.Histogram{x = sample3, opacity = 0.75};"
 				],
-				"execution_count": null
+				"execution_count": 20
 			},
 			{
 				"cell_type": "code",
 				"source": [
 					"Chart.Plot(new[] {hist1})"
 				],
-				"execution_count": null
+				"execution_count": 21
 			},
 			{
 				"cell_type": "code",
 				"source": [
 					"Chart.Plot(new[] {hist2})"
 				],
-				"execution_count": null
+				"execution_count": 22
 			},
 			{
 				"cell_type": "code",
 				"source": [
 					"Chart.Plot(new[] {hist3})"
 				],
-				"execution_count": null
+				"execution_count": 23
 			},
 			{
 				"cell_type": "code",
@@ -481,7 +481,7 @@
 					"histogram.WithLayout(layout);\n",
 					"histogram"
 				],
-				"execution_count": null
+				"execution_count": 24
 			},
 			{
 				"cell_type": "code",
@@ -496,7 +496,7 @@
 					"\n",
 					"histogram"
 				],
-				"execution_count": null
+				"execution_count": 25
 			},
 			{
 				"cell_type": "markdown",
@@ -565,7 +565,7 @@
 					"\r\n",
 					"Func<Column, Column, Column> vectorUdf1 = VectorUdf(arrowUdf);"
 				],
-				"execution_count": null
+				"execution_count": 26
 			},
 			{
 				"cell_type": "code",
@@ -584,7 +584,7 @@
 				"source": [
 					"df.Select(vectorUdf1(df[\"id\"], df[\"name\"]))"
 				],
-				"execution_count": null
+				"execution_count": 27
 			},
 			{
 				"cell_type": "code",
@@ -614,7 +614,7 @@
 					"\r\n",
 					"Func<Column, Column, Column> vectorUdf2 = VectorUdf(msftDfFunc);"
 				],
-				"execution_count": null
+				"execution_count": 28
 			},
 			{
 				"cell_type": "code",
@@ -633,7 +633,7 @@
 				"source": [
 					"df.Select(vectorUdf2(df[\"id\"], df[\"name\"]))"
 				],
-				"execution_count": null
+				"execution_count": 29
 			},
 			{
 				"cell_type": "markdown",
@@ -660,7 +660,7 @@
 					"// Installs specified version\r\n",
 					"#r \"nuget: NumSharp,0.20.5\""
 				],
-				"execution_count": null
+				"execution_count": 30
 			},
 			{
 				"cell_type": "code",

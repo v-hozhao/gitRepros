@@ -3,11 +3,15 @@
 	"properties": {
 		"nbformat": 4,
 		"nbformat_minor": 2,
+		"bigDataPool": {
+			"referenceName": "catestspark",
+			"type": "BigDataPoolReference"
+		},
 		"sessionProperties": {
-			"driverMemory": "28g",
-			"driverCores": 4,
-			"executorMemory": "28g",
-			"executorCores": 4,
+			"driverMemory": "56g",
+			"driverCores": 8,
+			"executorMemory": "56g",
+			"executorCores": 8,
 			"numExecutors": 2,
 			"conf": {
 				"spark.dynamicAllocation.enabled": "false",
@@ -23,6 +27,21 @@
 			},
 			"language_info": {
 				"name": "csharp"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/236a38d3-13a5-4aa5-98fc-bf8e3bb07edb/resourceGroups/bigdataqa/providers/Microsoft.Synapse/workspaces/bdbj1110ws/bigDataPools/catestspark",
+				"name": "catestspark",
+				"type": "Spark",
+				"endpoint": "https://bdbj1110ws.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/catestspark",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 10,
+				"cores": 8,
+				"memory": 56,
+				"automaticScaleJobs": false
 			},
 			"sessionKeepAliveTimeout": 30
 		},
@@ -62,7 +81,7 @@
 					"// Simple assignments should just work \n",
 					"var x = 1 + 25;"
 				],
-				"execution_count": 1
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -73,7 +92,7 @@
 					"// ... or just type it and execute a cell\n",
 					"256"
 				],
-				"execution_count": 2
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -81,7 +100,7 @@
 					"// You can even play with built-in libraries/functions\n",
 					"Enumerable.Range(1, 5)"
 				],
-				"execution_count": 3
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -91,7 +110,7 @@
 					"// https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8\n",
 					"1..4"
 				],
-				"execution_count": 4
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -109,14 +128,14 @@
 					"        (_, _) => \"tie\"\n",
 					"    };"
 				],
-				"execution_count": 5
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
 				"source": [
 					"RockPaperScissors(\"rock\", \"paper\")"
 				],
-				"execution_count": 6
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -131,7 +150,7 @@
 					"    )\n",
 					");"
 				],
-				"execution_count": 7
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -174,7 +193,7 @@
 					"var df = spark.CreateDataFrame(data, schema);\n",
 					"df.Show();"
 				],
-				"execution_count": 8
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -216,7 +235,7 @@
 					"    writer.Write(t);\n",
 					"}, \"text/html\");"
 				],
-				"execution_count": 9
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -230,7 +249,7 @@
 					"display(df);\n",
 					""
 				],
-				"execution_count": 10
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -250,7 +269,7 @@
 					"// ... and just typing df (equivalent to \"display(df);\")\r\n",
 					"df"
 				],
-				"execution_count": 11
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -260,7 +279,7 @@
 					"    public static readonly string s = \"The person named \";\n",
 					"}"
 				],
-				"execution_count": 12
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -275,7 +294,7 @@
 					"    }\n",
 					"}"
 				],
-				"execution_count": 13
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -290,7 +309,7 @@
 					"// you should re-execute this cell (i.e., the cell that defines the UDF)\n",
 					"var udf = Udf<string, string>(str => $\"{A.s} - {str} - is {B.GetMood()}!\");"
 				],
-				"execution_count": 14
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -301,7 +320,7 @@
 					"    .Select(\n",
 					"        udf((Microsoft.Spark.Sql.Column)df[\"name\"])));"
 				],
-				"execution_count": 15
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -332,7 +351,7 @@
 					"lineChart.WithYTitle(\"Y axis\");\r\n",
 					"lineChart"
 				],
-				"execution_count": 16
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -373,7 +392,7 @@
 					"var chart = Chart.Plot(new[] {bar});\n",
 					"display(chart);"
 				],
-				"execution_count": 17
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -397,7 +416,7 @@
 					"var histogramDf = spark.CreateDataFrame(data, schema);\n",
 					"histogramDf.Show()"
 				],
-				"execution_count": 18
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -419,7 +438,7 @@
 					"var sample2 = histogramDf.Sample(0.3, false).Collect().ToArray().Select(x => x.GetAs<double>(\"number\"));\n",
 					"var sample3 = histogramDf.Sample(0.6, true).Collect().ToArray().Select(x => x.GetAs<double>(\"number\"));"
 				],
-				"execution_count": 19
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -429,28 +448,28 @@
 					"var hist2 = new Graph.Histogram{x = sample2, opacity = 0.75};\n",
 					"var hist3 = new Graph.Histogram{x = sample3, opacity = 0.75};"
 				],
-				"execution_count": 20
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
 				"source": [
 					"Chart.Plot(new[] {hist1})"
 				],
-				"execution_count": 21
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
 				"source": [
 					"Chart.Plot(new[] {hist2})"
 				],
-				"execution_count": 22
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
 				"source": [
 					"Chart.Plot(new[] {hist3})"
 				],
-				"execution_count": 23
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -462,7 +481,7 @@
 					"histogram.WithLayout(layout);\n",
 					"histogram"
 				],
-				"execution_count": 24
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -477,7 +496,7 @@
 					"\n",
 					"histogram"
 				],
-				"execution_count": 25
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -546,7 +565,7 @@
 					"\r\n",
 					"Func<Column, Column, Column> vectorUdf1 = VectorUdf(arrowUdf);"
 				],
-				"execution_count": 26
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -565,7 +584,7 @@
 				"source": [
 					"df.Select(vectorUdf1(df[\"id\"], df[\"name\"]))"
 				],
-				"execution_count": 27
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -595,7 +614,7 @@
 					"\r\n",
 					"Func<Column, Column, Column> vectorUdf2 = VectorUdf(msftDfFunc);"
 				],
-				"execution_count": 28
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -614,7 +633,7 @@
 				"source": [
 					"df.Select(vectorUdf2(df[\"id\"], df[\"name\"]))"
 				],
-				"execution_count": 29
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -641,7 +660,7 @@
 					"// Installs specified version\r\n",
 					"#r \"nuget: NumSharp,0.20.5\""
 				],
-				"execution_count": 30
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -678,7 +697,7 @@
 					"    return $\"{nd[1].ToString()} - {str} - {nd[5].ToString()}!\";\r\n",
 					"});"
 				],
-				"execution_count": 31
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -705,7 +724,7 @@
 					"// We can also chain udfs.\r\n",
 					"df.Select(mathNetUdf(numSharpUdf(df[\"name\"])))"
 				],
-				"execution_count": 32
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -743,7 +762,7 @@
 					"// Note that the help message is the help message returned by the Scala implementation. This needs to be updated and addressed in a future version.\r\n",
 					"Console.WriteLine($\"Help:\\n{Credentials.Help()}\");"
 				],
-				"execution_count": 33
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -771,7 +790,7 @@
 					"// Note that the help message is the help message returned by the Scala implementation. This needs to be updated and addressed in a future version.\r\n",
 					"Console.WriteLine($\"Help:\\n{Env.Help()}\");"
 				],
-				"execution_count": 34
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -795,7 +814,7 @@
 					"// Note that the help message is the help message returned by the Scala implementation. This needs to be updated and addressed in a future version.\r\n",
 					"FS.Help(\"\");"
 				],
-				"execution_count": 35
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -818,7 +837,7 @@
 					"// Note that the help message is the help message returned by the Scala implementation. This needs to be updated and addressed in a future version.\r\n",
 					"Notebook.Help(\"\");"
 				],
-				"execution_count": 36
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -853,7 +872,7 @@
 					"// based on user-input html content.\r\n",
 					"DisplayHTML(\"<h1>Hello World</h1>\");"
 				],
-				"execution_count": 37
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -891,7 +910,7 @@
 					"// TODO: Methodname needs to be uppercase.\r\n",
 					"Console.WriteLine($\"Help:\\n{TokenLibrary.help()}\");"
 				],
-				"execution_count": 38
+				"execution_count": null
 			},
 			{
 				"cell_type": "markdown",
@@ -927,7 +946,7 @@
 					"using Microsoft.Spark.Experimental.Sql;\r\n",
 					"spark.GetAssemblyInfo()"
 				],
-				"execution_count": 39
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -947,7 +966,7 @@
 					"// Current version of the dotnet-interactive REPL.\r\n",
 					"#!about"
 				],
-				"execution_count": 40
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -968,7 +987,7 @@
 					"#!pwsh\r\n",
 					"cat /etc/hosts"
 				],
-				"execution_count": 41
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -990,7 +1009,7 @@
 					"open System\r\n",
 					"printfn \"Hello World from F#!\""
 				],
-				"execution_count": 42
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -998,7 +1017,7 @@
 					"// Whatever code is deemed invalid by the C# Compiler, is invalid here too \n",
 					"var z = 12345"
 				],
-				"execution_count": 43
+				"execution_count": null
 			},
 			{
 				"cell_type": "code",
@@ -1006,7 +1025,7 @@
 					"// You could write code that throws exceptions and they bubble up to the notebook\n",
 					"throw new Exception(\"watzzz\");"
 				],
-				"execution_count": 44
+				"execution_count": null
 			}
 		]
 	}
